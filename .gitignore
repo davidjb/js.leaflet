@@ -1,0 +1,13 @@
+bin
+include
+lib
+local
+parts
+.installed.cfg
+*.egg
+*.egg-info
+*.pyc
+*.swp
+*~
+develop-eggs
+dist
