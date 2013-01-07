@@ -1,7 +1,7 @@
 CHANGES
 *******
 
-0.4.5 (unreleased)
+0.4.5 (2013-01-07)
 ==================
 
 - Initial release.
