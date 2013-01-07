@@ -4,7 +4,8 @@ js.leaflet
 Introduction
 ============
 
-This library packages `Leaflet`_ for `fanstatic`_.
+This library packages the `Leaflet`_ JavaScript mapping library for
+`fanstatic`_.
 
 .. _`fanstatic`: http://fanstatic.org
 .. _`Leaflet`: http://leafletjs.com/
@@ -55,4 +56,5 @@ In order to obtain a newer version of of this library, do the following
     git push
 
 If you're doing this out in your own fork of the GitHub repository, then
-send through a pull request so everyone can benefit.
+send through a pull request so everyone can benefit from the updated 
+library.
