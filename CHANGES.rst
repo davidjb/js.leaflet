@@ -1,8 +1,8 @@
 CHANGES
 *******
 
-0.4.5-1 (unreleased)
-====================
+0.5 (2013-02-04)
+================
 
 - Upgraded Leaflet to v0.5.
   [davidjb]
