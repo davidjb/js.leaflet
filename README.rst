@@ -45,14 +45,15 @@ In order to obtain a newer version of of this library, do the following
 (substituting the version number for the newer version)::
 
     pushd js/leaflet/resources
-    wget https://github.com/CloudMade/Leaflet/tarball/v0.4.5 -O leaflet.tgz
+    wget https://github.com/Leaflet/Leaflet/archive/v0.5.tar.gz -O leaflet.tgz
     #Overwrites older files with new ones
     tar vxf leaflet.tgz --wildcards '*/dist' --strip=2
     rm leaflet.tgz
     popd
     #Edit changelog, setup.py for versions, etc
     python setup.py minify_leaflet
-    git commit -a -m "Updated for release 0.4.5"
+    git add js
+    git commit -a -m "Updated for release 0.5"
     git push
 
 If you're doing this out in your own fork of the GitHub repository, then
