@@ -1,7 +1,7 @@
 CHANGES
 *******
 
-0.5-1 (unreleased)
+0.6.2 (unreleased)
 ==================
 
 - Nothing changed yet.
