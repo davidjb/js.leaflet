@@ -37,23 +37,19 @@ suggested method to do this is via the `Buildout` within this package::
     python boostrap.py
     ./bin/buildout
 
-For minification of resources to succeed, you require a Java installation as
-this process uses the YUI Compressor library (via the ``minify``
-and``yuicompressor`` Python packages).
-
 In order to obtain a newer version of of this library, do the following 
 (substituting the version number for the newer version)::
 
     pushd js/leaflet/resources
-    wget https://github.com/Leaflet/Leaflet/archive/v0.5.tar.gz -O leaflet.tgz
+    wget https://github.com/Leaflet/Leaflet/archive/v0.6.2.tar.gz -O leaflet.tgz
     #Overwrites older files with new ones
     tar vxf leaflet.tgz --wildcards '*/dist' --strip=2
     rm leaflet.tgz
     popd
-    #Edit changelog, setup.py for versions, etc
-    python setup.py minify_leaflet
+    #Edit changelog, setup.py for versions, etc here
+    ./bin/fanstatic_compile -v js
     git add js
-    git commit -a -m "Updated for release 0.5"
+    git commit -a -m "Updated for release 0.6.2"
     git push
 
 If you're doing this out in your own fork of the GitHub repository, then

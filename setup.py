@@ -36,10 +36,9 @@ setup(
     zip_safe=False,
     setup_requires=[
         'setuptools-git',
-        'minify',
     ],
     install_requires=[
-        'fanstatic',
+        'fanstatic>=1.0a',
         'setuptools',
         ],
     entry_points={

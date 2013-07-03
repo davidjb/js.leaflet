@@ -4,7 +4,13 @@ CHANGES
 0.6.2 (unreleased)
 ==================
 
-- Nothing changed yet.
+- Upgraded Leaflet to v0.6.2.
+  [davidjb]
+- Use Fanstatic for minification of CSS. This library now requires Fanstatic
+  1.0a or above.
+  [davidjb]
+- Fix typo in library name.
+  [davidjb]
 
 
 0.5 (2013-02-04)
