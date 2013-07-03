@@ -1,7 +1,7 @@
 CHANGES
 *******
 
-0.6.2 (unreleased)
+0.6.2 (2013-07-03)
 ==================
 
 - Upgraded Leaflet to v0.6.2.
