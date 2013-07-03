@@ -1,6 +1,6 @@
 from fanstatic import Library, Resource
 
-library = Library('leaftlet', 'resources')
+library = Library('leaflet', 'resources')
 
 leaflet_css = Resource(
     library,
