@@ -11,6 +11,8 @@ CHANGES
   [davidjb]
 - Fix typo in library name.
   [davidjb]
+- Add tox and Travis CI support.
+  [davidjb]
 
 
 0.5 (2013-02-04)
