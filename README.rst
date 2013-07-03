@@ -18,6 +18,9 @@ library also packages up minified versions of the original CSS resources.
 Packaging
 =========
 
+.. image:: https://secure.travis-ci.org/davidjb/js.leaflet.png
+    :target: http://travis-ci.org/davidjb/js.leaflet
+
 The packaging is stored on GitHub at
 https://github.com/davidjb/js.leaflet. If you happen to come across a bug
 that corresponds to *packaging*, then please report it here. Pull requests are
