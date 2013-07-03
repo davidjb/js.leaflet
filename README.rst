@@ -27,8 +27,8 @@ better!
 Any other bugs that relate to the library itself should be directed to the
 original developers.
 
-Updating this package
----------------------
+Development of this package
+---------------------------
 
 This process requires installation of the package for development - the
 suggested method to do this is via the `Buildout` within this package::
@@ -37,7 +37,19 @@ suggested method to do this is via the `Buildout` within this package::
     python boostrap.py
     ./bin/buildout
 
-In order to obtain a newer version of of this library, do the following 
+Running tests
+-------------
+
+After running the `Buildout` within this package, do this:
+
+    ./bin/tox
+
+...and watch the magic unfold.
+
+Updating this package
+---------------------
+
+In order to obtain a newer version of this library, do the following 
 (substituting the version number for the newer version)::
 
     pushd js/leaflet/resources

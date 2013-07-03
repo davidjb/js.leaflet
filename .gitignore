@@ -4,6 +4,7 @@ lib
 local
 parts
 .installed.cfg
+.tox
 *.egg
 *.egg-info
 *.pyc
