@@ -55,16 +55,17 @@ Updating this package
 In order to obtain a newer version of this library, do the following 
 (substituting the version number for the newer version)::
 
+    LEAFLET_VERSION=0.6.3
     pushd js/leaflet/resources
-    wget https://github.com/Leaflet/Leaflet/archive/v0.6.2.tar.gz -O leaflet.tgz
+    wget http://leaflet-cdn.s3.amazonaws.com/build/leaflet-$LEAFLET_VERSION.zip -O leaflet.zip
     #Overwrites older files with new ones
-    tar vxf leaflet.tgz --wildcards '*/dist' --strip=2
-    rm leaflet.tgz
+    unzip -o leaflet.zip
+    rm leaflet.zip
     popd
     #Edit changelog, setup.py for versions, etc here
-    ./bin/fanstatic_compile -v js
+    ./bin/fanstatic-compile -v js
     git add js
-    git commit -a -m "Updated for release 0.6.2"
+    git commit -a -m "Updated for release $LEAFLET_VERSION"
     git push
 
 If you're doing this out in your own fork of the GitHub repository, then

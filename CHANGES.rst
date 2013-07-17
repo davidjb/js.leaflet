@@ -4,7 +4,8 @@ CHANGES
 0.6.3-1 (unreleased)
 ====================
 
-- Nothing changed yet.
+- Upgraded Leaflet to v0.6.3.
+  [davidjb]
 
 
 0.6.2 (2013-07-03)
