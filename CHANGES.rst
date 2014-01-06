@@ -4,7 +4,8 @@ CHANGES
 0.7.2 (unreleased)
 ==================
 
-- Nothing changed yet.
+- Update Buildout bootstrap to v2.
+  [davidjb]
 
 
 0.7.1 (2014-01-06)
