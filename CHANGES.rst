@@ -1,10 +1,11 @@
 CHANGES
 *******
 
-0.6.4 (unreleased)
+0.7.1 (2014-01-06)
 ==================
 
-- Nothing changed yet.
+- Upgraded Leaflet to v0.7.1.
+  [davidjb]
 
 
 0.6.3 (2013-07-18)
