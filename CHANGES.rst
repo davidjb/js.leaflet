@@ -4,6 +4,9 @@ CHANGES
 0.7.2 (unreleased)
 ==================
 
+- Update Leaflet to v1.0.0-b1.  This removes the IE style sheets and
+  resources, which are now incorprated in ``leaflet.css``.
+  [davidjb]
 - Update Buildout bootstrap to v2.
   [davidjb]
 
