@@ -1,7 +1,7 @@
 CHANGES
 *******
 
-1.0.0b1 (unreleased)
+1.0.0b1 (2015-07-20)
 ====================
 
 - Update Leaflet to v1.0.0-b1.  This removes the IE style sheets and
