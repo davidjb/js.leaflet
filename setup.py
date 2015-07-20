@@ -31,7 +31,8 @@ setup(
     author_email='fanstatic@googlegroups.com',
     url='https://github.com/davidjb/js.leaflet',
     license='BSD',
-    packages=find_packages(),namespace_packages=['js'],
+    packages=find_packages(),
+    namespace_packages=['js'],
     include_package_data=True,
     zip_safe=False,
     setup_requires=[
