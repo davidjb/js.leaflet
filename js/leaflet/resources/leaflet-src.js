@@ -1,10 +1,10 @@
 /*
- Leaflet 1.0-dev (46d2d6a), a JS library for interactive maps. http://leafletjs.com
+ Leaflet 1.0.0-beta.2 (21934dc), a JS library for interactive maps. http://leafletjs.com
  (c) 2010-2015 Vladimir Agafonkin, (c) 2010-2011 CloudMade
 */
 (function (window, document, undefined) {
 var L = {
-	version: '1.0-dev'
+	version: '1.0.0-beta.2'
 };
 
 function expose() {
@@ -1137,7 +1137,7 @@ L.DomUtil = {
 		while (element.tabIndex === -1) {
 			element = element.parentNode;
 		}
-		if (!element) { return; }
+		if (!element || !element.style) { return; }
 		L.DomUtil.restoreOutline();
 		this._outlineElement = element;
 		this._outlineStyle = element.style.outline;
@@ -2294,7 +2294,7 @@ L.Map = L.Evented.extend({
 		var target = targets[0];
 
 		// prevents firing click after you just dragged an object
-		if (e.type === 'click' && !e._simulated && this._draggableMoved(target)) { return; }
+		if ((e.type === 'click' || e.type === 'preclick') && !e._simulated && this._draggableMoved(target)) { return; }
 
 		var data = {
 			originalEvent: e
@@ -6178,7 +6178,7 @@ L.Canvas = L.Renderer.extend({
 		var container = this._container = document.createElement('canvas');
 
 		L.DomEvent
-			.on(container, 'mousemove', this._onMouseMove, this)
+			.on(container, 'mousemove', L.Util.throttle(this._onMouseMove, 66, this), this)
 			.on(container, 'click dblclick mousedown mouseup contextmenu', this._onClick, this)
 			.on(container, 'mouseout', this._handleMouseOut, this);
 
@@ -6187,6 +6187,8 @@ L.Canvas = L.Renderer.extend({
 
 	_update: function () {
 		if (this._map._animatingZoom && this._bounds) { return; }
+
+		this._drawnLayers = {};
 
 		L.Renderer.prototype._update.call(this);
 
@@ -6278,6 +6280,8 @@ L.Canvas = L.Renderer.extend({
 
 		if (!len) { return; }
 
+		this._drawnLayers[layer._leaflet_id] = layer;
+
 		ctx.beginPath();
 
 		for (i = 0; i < len; i++) {
@@ -6359,7 +6363,7 @@ L.Canvas = L.Renderer.extend({
 	},
 
 	_onMouseMove: function (e) {
-		if (!this._map || this._map._animatingZoom) { return; }
+		if (!this._map || this._map.dragging._draggable._moving || this._map._animatingZoom) { return; }
 
 		var point = this._map.mouseEventToLayerPoint(e);
 		this._handleMouseOut(e, point);
@@ -6380,8 +6384,8 @@ L.Canvas = L.Renderer.extend({
 	_handleMouseHover: function (e, point) {
 		var id, layer;
 		if (!this._hoveredLayer) {
-			for (id in this._layers) {
-				layer = this._layers[id];
+			for (id in this._drawnLayers) {
+				layer = this._drawnLayers[id];
 				if (layer.options.interactive && layer._containsPoint(point)) {
 					L.DomUtil.addClass(this._container, 'leaflet-interactive'); // change cursor
 					this._fireEvent(layer, e, 'mouseover');
@@ -7502,7 +7506,7 @@ L.extend(L.DomEvent, {
 		}
 
 		function onTouchEnd() {
-			if (doubleTap) {
+			if (doubleTap && !touch.cancelBubble) {
 				if (L.Browser.pointer) {
 					// work around .type being readonly with MSPointer* events
 					var newTouch = {},
