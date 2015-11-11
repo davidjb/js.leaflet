@@ -1,7 +1,7 @@
 CHANGES
 *******
 
-1.0.0b2 (unreleased)
+1.0.0b2 (2015-11-11)
 ====================
 
 - Update Leaflet to 1.0.0-beta.2.
