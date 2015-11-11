@@ -55,9 +55,9 @@ Updating this package
 In order to obtain a newer version of this library, do the following 
 (substituting the version number for the newer version)::
 
-    LEAFLET_VERSION=1.0.0-b1
+    LEAFLET_VERSION=1.0.0-beta.2
     pushd js/leaflet/resources
-    wget http://cdn.leafletjs.com/downloads/leaflet-$LEAFLET_VERSION.zip -O leaflet.zip
+    wget http://cdn.leafletjs.com/leaflet/v$LEAFLET_VERSION/leaflet.zip
     #Overwrites older files with new ones
     unzip -o leaflet.zip
     rm leaflet.zip
