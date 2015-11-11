@@ -4,6 +4,8 @@ CHANGES
 1.0.0b2 (unreleased)
 ====================
 
+- Update Leaflet to 1.0.0-beta.2.
+  [davidjb]
 - Update Leaflet to master to incorporate fix for https://github.com/Leaflet/Leaflet/issues/3606.
   [davidjb]
 
